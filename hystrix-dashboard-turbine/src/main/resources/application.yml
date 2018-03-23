@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: trubin
+
+server:
+  port: 6000
+
+trubine:
+  #aggregator:  在这种情况下，来自2个服务的集群名称从其元数据映射中提取，并且预期具有包含“SYSTEM”和“USER”的值。
+    #clusterConfig:
+  appConfig: demo-consumer1,demo-consumer2,demo-clent
+  clusterNameExpression: new String("default")
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
